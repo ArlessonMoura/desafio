@@ -11,10 +11,10 @@ const allSchedules = async () => connection()
 //  .then((list) => list);
 
 const createSchedule = async (employeSchedule) => {
-  const inserted = await connection().then((db) => db.collection('basics').insertOne(employeSchedule));
+  const inserted = await connection().then((db) => db.collection('basics').insertOne({ employeSchedule }));
 };
 
-const update = async (employeSchedule, id) => {
+const updateSchedule = async (employeSchedule, id) => {
   const updated = await connection()
   .then((db) => db.collection('basics').updateOne({ _id: ObjectId(id) },
     { employeSchedule }));
@@ -27,4 +27,7 @@ const deleteEmployee = async (id) => {
 
 module.exports = {
   allSchedules,
+  createSchedule,
+  updateSchedule,
+  deleteEmployee,
 };

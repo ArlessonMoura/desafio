@@ -18,7 +18,7 @@ const allSchedules = async () => {
 
 const createSchedule = async (employeSchedule) => {
   const list = await modelBasics.allSchedules();
-  const validate = list.find((employee) => employee.name === employeSchedule.name);
+  const validate = list.find((employee) => employee === employeSchedule);
   if (validate) {
     return null;
   }
