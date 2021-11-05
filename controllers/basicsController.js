@@ -1,4 +1,4 @@
-const serviceProducts = require('../services/basicsService');
+const serviceBasics = require('../services/basicsService');
 
 // const productId = async (req, res) => {
 //   const { id } = req.params;
@@ -22,6 +22,7 @@ const allSchedules = async (_req, res) => {
 const createSchedule = async (req, res) => {
   const employeSchedule = req.body;
   const response = await serviceBasics.createSchedule(employeSchedule);
+  console.log(response);
   if (!response) {
     return res.status(422).json({
       err: {

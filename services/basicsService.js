@@ -17,12 +17,13 @@ const allSchedules = async () => {
 
 
 const createSchedule = async (employeSchedule) => {
-  const list = await modelBasics.allSchedules();
-  const validate = list.find((employee) => employee === employeSchedule);
-  if (validate) {
-    return null;
-  }
+  // const list = await modelBasics.allSchedules();
+  // const validate = list.find((employee) => employee === employeSchedule);
+  // if (validate) {
+  //   return null;
+  // }
   const insertReq = await modelBasics.createSchedule(employeSchedule);
+  console.log(insertReq);
   return insertReq;
 };
 
@@ -31,7 +32,7 @@ const updateSchedule = async (employeSchedule, id) => {
   if (testId === false) {
     return null;
   }
-  const updatReq = await modelProducts.update(employeSchedule, id);
+  const updatReq = await modelBasics.updateSchedule(employeSchedule, id);
   return updatReq;
 };
 
