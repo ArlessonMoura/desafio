@@ -1,0 +1,16 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "description": "Primeiro desafio carreira Trybe",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "test"
+  },
+  "author": "Arlesson Moura",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.1.4",
+    "nodemon": "^2.0.14"
+  }
+}
